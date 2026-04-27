@@ -20,7 +20,8 @@ import (
 // @BasePath		/
 func main() {
 	if err := cmd.Execute(); err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		// Print the error with a clearer prefix and exit with a non-zero status code
+		fmt.Fprintf(os.Stderr, "fatal error: %v\n", err)
 		os.Exit(1)
 	}
 }
