@@ -21,7 +21,8 @@ import (
 func main() {
 	if err := cmd.Execute(); err != nil {
 		// Print the error with a clearer prefix and exit with a non-zero status code
+		// Note: using exit code 2 to distinguish application errors from OS-level errors (exit code 1)
 		fmt.Fprintf(os.Stderr, "fatal error: %v\n", err)
-		os.Exit(1)
+		os.Exit(2)
 	}
 }
