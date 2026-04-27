@@ -22,6 +22,7 @@ func main() {
 	if err := cmd.Execute(); err != nil {
 		// Print the error with a clearer prefix and exit with a non-zero status code
 		// Note: using exit code 2 to distinguish application errors from OS-level errors (exit code 1)
+		// Personal note: exit code 2 follows the convention used by tools like diff and grep
 		fmt.Fprintf(os.Stderr, "fatal error: %v\n", err)
 		os.Exit(2)
 	}
